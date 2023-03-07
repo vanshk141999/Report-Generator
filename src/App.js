@@ -263,6 +263,7 @@ function App() {
     window.getSelection().removeAllRanges();
     console.log("Copied to clipboard: " + myDiv.innerText);
     toast("Message copied to clipboard");
+    document.getElementById("popupContent").classList.toggle("cursor-pointer");
   }
 
   return (
@@ -383,12 +384,10 @@ function App() {
                           Attention to detail
                         </li>
                         <select id="attentionToDetail">
-                          <option value="0 = Below Average">
-                            0 = Below Average
-                          </option>
-                          <option value="1 = Average">1 = Average</option>
-                          <option value="2 = Good">2 = Good</option>
-                          <option value="3 = Expert">3 = Expert</option>
+                          <option value="0 = Below Average">0</option>
+                          <option value="1 = Average">1</option>
+                          <option value="2 = Good">2</option>
+                          <option value="3 = Expert">3</option>
                         </select>
                       </div>
                       <div>
@@ -396,12 +395,10 @@ function App() {
                           Always up-to-date
                         </li>
                         <select id="alwaysUpToDate">
-                          <option value="0 = Below Average">
-                            0 = Below Average
-                          </option>
-                          <option value="1 = Average">1 = Average</option>
-                          <option value="2 = Good">2 = Good</option>
-                          <option value="3 = Expert">3 = Expert</option>
+                          <option value="0 = Below Average">0</option>
+                          <option value="1 = Average">1</option>
+                          <option value="2 = Good">2</option>
+                          <option value="3 = Expert">3</option>
                         </select>
                       </div>
                       <div>
@@ -409,12 +406,10 @@ function App() {
                           Punctual, disciplined and organised
                         </li>
                         <select id="punctual">
-                          <option value="0 = Below Average">
-                            0 = Below Average
-                          </option>
-                          <option value="1 = Average">1 = Average</option>
-                          <option value="2 = Good">2 = Good</option>
-                          <option value="3 = Expert">3 = Expert</option>
+                          <option value="0 = Below Average">0</option>
+                          <option value="1 = Average">1</option>
+                          <option value="2 = Good">2</option>
+                          <option value="3 = Expert">3</option>
                         </select>
                       </div>
                       <div>
@@ -422,12 +417,10 @@ function App() {
                           Responsible, action taker and results oriented
                         </li>
                         <select id="responsible">
-                          <option value="0 = Below Average">
-                            0 = Below Average
-                          </option>
-                          <option value="1 = Average">1 = Average</option>
-                          <option value="2 = Good">2 = Good</option>
-                          <option value="3 = Expert">3 = Expert</option>
+                          <option value="0 = Below Average">0</option>
+                          <option value="1 = Average">1</option>
+                          <option value="2 = Good">2</option>
+                          <option value="3 = Expert">3</option>
                         </select>
                       </div>
                       <div>
@@ -435,10 +428,10 @@ function App() {
                           Communication
                         </li>
                         <select id="communication">
-                          <option>0 = Below Average</option>
-                          <option>1 = Average</option>
-                          <option>2 = Good</option>
-                          <option>3 = Expert</option>
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
                         </select>
                       </div>
                     </div>
@@ -466,13 +459,13 @@ function App() {
         <div className="flex justify-between">
           <div>
             <label className="text-base font-semibold leading-7">
-              Search by candidate name{" "}
+              Search by candidate name
             </label>
             <input id="search" type="text" onChange={handleSearch} />
           </div>
           <div>
             <label className="text-base font-semibold leading-7">
-              Search by Date of Training{" "}
+              Search by Date of Training
             </label>
             <input
               id="dateOfTraining"
@@ -511,7 +504,7 @@ function App() {
                   <div
                     id="popupContent"
                     onClick={copyText}
-                    className="overflow-y-scroll max-h-[700px]"
+                    className="overflow-y-scroll max-h-[700px] cursor-pointer"
                   >
                     <h2>Weekly Report for {candidatePopup.name}</h2>
                     <br />
@@ -568,7 +561,7 @@ function App() {
                     <br />
                     <h1>Core Values</h1>
                     <p> -----------</p>
-                    <ol>
+                    <ul>
                       <li>
                         - Attention to detail :{" "}
                         {candidatePopup.alwaysUpToDateValue}
@@ -588,7 +581,14 @@ function App() {
                       <li>
                         - Communication : {candidatePopup.communicationValue}
                       </li>
-                    </ol>
+                    </ul>
+                    <ul className="mt-2 border-2 p-2">
+                      <h1 className="font-bold">Scale</h1>
+                      <li>0 = Below Average</li>
+                      <li>1 = Average</li>
+                      <li>2 = Good</li>
+                      <li>3 = Expert</li>
+                    </ul>
                     <br />
                     <h1>Remarks</h1>
                     <p> --------</p>
