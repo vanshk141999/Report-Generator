@@ -1,5 +1,5 @@
-# Report Generator
+# React Notes
 
 Demo - https://d.pr/v/iaxzEP
 
-Live Demo - https://cosmic-basbousa-4d2450.netlify.app/
+Live Demo - https://stupendous-torte-70df80.netlify.app/
